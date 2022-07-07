@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dnyaneshwar Aghav</title>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <style>
+            body {background:#ccc;}
+logo , h1,p {font:bold 25px arial, sans-serif;background-color: #565656;color: transparent;text-shadow: 2px 2px 3px rgba(255,255,255,0.5); -webkit-background-clip: text; -moz-background-clip: text;background-clip: text;}
+.center {text-align:center;}
+        </style>
+    </head>
+    <body>
+    <div class ="logo center"">
+    
+        <h1>Hello , My name is <span class="typewrite" data-period="3000" data-type='[ "Dnyaneshwar!", "Aayush!", "Danny.", "Mauli." ]'></span>
+        </h1>
+        <div class="center p"><br /><br />
+            © www.iush.in 2022
+        </div>
+    </div>        
+        <script>
+            //made by vipul mirajkar thevipulm.appspot.com
+var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+        </script>
+    </body>
+</html>
