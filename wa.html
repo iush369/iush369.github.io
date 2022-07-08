@@ -17,11 +17,13 @@ $(function() {
     const text = [
       data.name,
       data.mob,
-    ].join(' - ') // change to what you want sep to be
+    ]
+let text = []
+    $form.serializeArray().forEach(v => text.push(v.name.charAt(0).toUpperCase() + v.name.slice(1) + ': ' + v.value))
 
-    // make the url
-    const action = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
-    console.log(action)
+    // make the url, join text with a new line
+    const action = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text.join('\n'));
+    
 
     
         $form.attr('action', action);
