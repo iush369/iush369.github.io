@@ -2,26 +2,37 @@
 
 $(function() {
   $('#send-message-whatsapp').on('click', 'button', function(e) {
-    ...
+    e.preventDefault();
 
-    // uppercase first letter of Key: value i.e:
-    [
-      "Nome: ",
-      "Email: ",
-      "Wpp: ",
-      "Cep: ",
-      "Rua: ",
-      "Bairro: ",
-      "Complemento: "
-    ]
+    const $form = $("#send-message-whatsapp");
 
-    let text = []
-    $form.serializeArray().forEach(v => text.push(v.name.charAt(0).toUpperCase() + v.name.slice(1) + ': ' + v.value))
+    const phone = '919664933654';
 
-    // make the url, join text with a new line
-    const action = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text.join('\n'));
+    // get object i.e {key: 'value'} of form
+    let data = {}
+    $form.serializeArray().forEach(v => data[v.name] = v.value)
+
+    // make the ?text= payload, 
+    // - could use .filter() here too if you dont want empty values
+    const text = [
+      data.nome,
+      data.email,
+      data.wpp,
+      data.cep,
+      data.rua,
+      data.bairro,
+      data.complemento
+    ].join(' - ') // change to what you want sep to be
+
+    // make the url
+    const action = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+    console.log(action)
+
     
-    ...
+        $form.attr('action', action);
+        $form.attr('target', '_blank');
+        $form.submit();
+    
   });
 });
 
