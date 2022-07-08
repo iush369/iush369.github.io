@@ -15,13 +15,8 @@ $(function() {
     // make the ?text= payload, 
     // - could use .filter() here too if you dont want empty values
     const text = [
-      data.nome,
-      data.email,
-      data.wpp,
-      data.cep,
-      data.rua,
-      data.bairro,
-      data.complemento
+      data.name,
+      data.mob,
     ].join(' - ') // change to what you want sep to be
 
     // make the url
@@ -46,40 +41,15 @@ $(function() {
 <form id="send-message-whatsapp">
 
     <div class="form-label-group">
-    <input type="text" name="nome" class="form-control" placeholder="Seu nome" required="" autofocus="">
-    <label for="nome">Nome completo</label>
+    <input type="text" name="name" class="form-control" placeholder="Your name" required="yes" autofocus="">
+    <label for="name">Name</label>
   </div>
     
     <div class="form-label-group">
-    <input type="email" name="email" class="form-control" placeholder="Seu e-mail" required="" autofocus="">
-    <label for="inputEmail">Seu E-mail</label>
+    <input type="number" name="mob" class="form-control" placeholder="Seu e-mail" required="" autofocus="">
+    <label for="inputmobile">mobile no</label>
   </div>
   
-  <div class="form-label-group">
-    <input type="text"name="wpp" class="form-control" placeholder="Seu e-mail" required="" autofocus="">
-    <label for="wpp">Seu Número/WhatsApp</label>
-  </div>
-  
-   <div class="form-label-group">
-    <input type="text" id="cep" name="cep" class="form-control" placeholder="Seu cep" required="" autofocus="">
-    <label for="cep">Seu CEP</label>
-  </div>
-  
-  <div class="form-label-group">
-    <input type="text" id="rua" name="rua" class="form-control" placeholder="Sua Rua" required="" autofocus="">
-    <label for="rua">Nome da sua Rua</label>
-  </div>
-  
-  <div class="form-label-group">
-    <input type="text" id="bairro" name="bairro" class="form-control" placeholder="Seu Bairro" required="" autofocus="">
-    <label for="rua">Bairro</label>
-  </div>
-
-    <div class="form-label-group">
-    <input type="text" name="complemento" class="form-control" placeholder="Complemento" required="" autofocus="">
-    <label for="rua">Complemento</label>
-  </div>
-
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me
