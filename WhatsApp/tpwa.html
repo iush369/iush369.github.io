@@ -18,7 +18,7 @@
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="whatsAppAnyForm" action="" method="POST" data-title="Contact Form" novalidate="">
+                <form id="contactForm" action="" method="POST" data-title="Contact Form" novalidate="">
                     <div class="row align-items-stretch mb-5">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -71,7 +71,7 @@
 <script>
 (function($){
         "use strict";
-			$('#whatsAppAnyForm').appPlugin(
+			$('#contactForm').appPlugin(
 				{
 					whatsappPhone: '+911234567890', // Your Whatsapp Number, on which you want to send message.
 					submissionMessage: 'You have been redirected to the WhatsApp to submit the message. Thank you.' // form submission message
