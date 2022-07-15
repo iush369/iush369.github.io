@@ -1,11 +1,34 @@
-<style>
 
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - CSS Box Shadow Generator</title>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  
+<style>
 html, body {
   min-width: 100%;
   min-height: 100%;
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .container {
@@ -23,92 +46,83 @@ html, body {
 .left-column {
   width: 45%;
   padding: 0 1em;
-  
-  .horizontal-length,
-  .vertical-length,
-  .blur-radius, 
-  .spread-radius,
-  .opacity {
-    display: flex;
-    flex-direction: column;
-    margin: 1em auto;
-    width: 90%;
-    
-    input[type="number"] {
-      width: 4em;
-      padding: .5em 0 .5em .5em;
-      font-size: .8rem;
-    }
-   
-  }
-  
-  .main-heading {
-    font-family: 'Source Sans Pro', sans-serif;
-    width: 90%;
-    margin: 1em auto .5em;
-   }
-  
-  .colors {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 0;
-    width: 90%;
-    margin: 0 auto;
-    
-    div {
-      margin-right: 2em;
-    }
-  }
-  
-  .colorInput {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 0 1em;
-    
-    p {
-      margin: 0;
-    }
-    
-    input[type="text"] {
-      width: 5.5em;
-      margin-left: 1em;
-      text-align: right;
-      padding: .5em;
-    }
-  }
-  
-  .inset {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 90%;
-    margin: 0 auto;
-    
-    .insetInput {
-      display: flex;
-      flex-direction: row;
-      height: auto;
-      margin: 1em 1.5em 0 0;
-      align-items: center;
-    }
-  }
-  
-  input[type="checkbox" i] {
-    width: 20px;
-    margin-bottom: 0;
-  }
-  
-  .label {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-  }
+}
+.left-column .horizontal-length,
+.left-column .vertical-length,
+.left-column .blur-radius,
+.left-column .spread-radius,
+.left-column .opacity {
+  display: flex;
+  flex-direction: column;
+  margin: 1em auto;
+  width: 90%;
+}
+.left-column .horizontal-length input[type=number],
+.left-column .vertical-length input[type=number],
+.left-column .blur-radius input[type=number],
+.left-column .spread-radius input[type=number],
+.left-column .opacity input[type=number] {
+  width: 4em;
+  padding: 0.5em 0 0.5em 0.5em;
+  font-size: 0.8rem;
+}
+.left-column .main-heading {
+  font-family: "Source Sans Pro", sans-serif;
+  width: 90%;
+  margin: 1em auto 0.5em;
+}
+.left-column .colors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+.left-column .colors div {
+  margin-right: 2em;
+}
+.left-column .colorInput {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 1em;
+}
+.left-column .colorInput p {
+  margin: 0;
+}
+.left-column .colorInput input[type=text] {
+  width: 5.5em;
+  margin-left: 1em;
+  text-align: right;
+  padding: 0.5em;
+}
+.left-column .inset {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 90%;
+  margin: 0 auto;
+}
+.left-column .inset .insetInput {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  margin: 1em 1.5em 0 0;
+  align-items: center;
+}
+.left-column input[type=checkbox i] {
+  width: 20px;
+  margin-bottom: 0;
+}
+.left-column .label {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .right-column {
@@ -117,7 +131,7 @@ html, body {
   justify-content: center;
   min-height: 100%;
   width: 55%;
-  box-shadow: -8px 0px 10px -5px rgba(0,0,0,0.1);
+  box-shadow: -8px 0px 10px -5px rgba(0, 0, 0, 0.1);
 }
 
 pre {
@@ -137,20 +151,34 @@ pre code {
   border-radius: 10px;
   background-color: #C11C35;
   font-weight: 500;
-  box-shadow: 0px 0px 0px 0px rgba(0,0,0,1);
+  box-shadow: 0px 0px 0px 0px black;
   color: white;
   outline: none;
-  transition: .3s;
-  
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-  }
+  transition: 0.3s;
 }
-
+.button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
 </style>
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
-<div class="container">
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="container">
   <div class="left-column">
    <h1 class="main-heading">CSS Box Shadow Generator</h1>
    <div class="colors">
@@ -231,8 +259,10 @@ pre code {
     </code></pre>
   </div>
 </div>
-<script>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 
+  
+      <script id="rendered-js" >
 var horizontal = document.querySelector('#horizontal');
 var vertical = document.querySelector('#vertical');
 var blur = document.querySelector('#blur');
@@ -245,8 +275,8 @@ var opacity = document.querySelector('#opacity');
 var inset = document.querySelector('#inset');
 var button = document.querySelector('.button');
 var boxShadowString = getInset() + getHorizontal() + "px " + getVertical() + "px " + getBlur() + "px " + getSpread() + "px " + getColor(shadow.value, opacity.value);
-var horiVal = document.querySelector('#horizontalVal')
-;
+var horiVal = document.querySelector('#horizontalVal');
+
 var veriVal = document.querySelector('#verticalVal');
 var blurVal = document.querySelector('#blurRadius');
 var spreadVal = document.querySelector('#spreadRadius');
@@ -274,82 +304,82 @@ button.style.backgroundColor = buttonColor.value;
 button.style.color = textColor.value;
 document.querySelector('.right-column').style.backgroundColor = bgColor.value;
 
-inset.addEventListener('change', function() {
+inset.addEventListener('change', function () {
   boxShadowString = getInset() + getHorizontal() + "px " + getVertical() + "px " + getBlur() + "px " + getSpread() + "px " + getColor(shadow.value, opacity.value);
   button.style.boxShadow = boxShadowString;
   codeSnippet.innerHTML = "box-shadow: " + boxShadowString + ";";
-})
+});
 
-opacity.addEventListener('mousemove', function() {
+opacity.addEventListener('mousemove', function () {
   boxShadowString = getInset() + getHorizontal() + "px " + getVertical() + "px " + getBlur() + "px " + getSpread() + "px " + getColor(shadow.value, opacity.value);
   opacVal.value = opacity.value;
-    button.style.boxShadow = boxShadowString;
+  button.style.boxShadow = boxShadowString;
   codeSnippet.innerHTML = "box-shadow: " + boxShadowString + ";";
-})
+});
 
-horizontal.addEventListener('mousemove', function() {
+horizontal.addEventListener('mousemove', function () {
   boxShadowString = getInset() + getHorizontal() + "px " + getVertical() + "px " + getBlur() + "px " + getSpread() + "px " + getColor(shadow.value, opacity.value);
   horiVal.value = getHorizontal();
-    button.style.boxShadow = boxShadowString;
+  button.style.boxShadow = boxShadowString;
   codeSnippet.innerHTML = "box-shadow: " + boxShadowString + ";";
 });
 
-vertical.addEventListener('mousemove', function() {
+vertical.addEventListener('mousemove', function () {
   boxShadowString = getInset() + getHorizontal() + "px " + getVertical() + "px " + getBlur() + "px " + getSpread() + "px " + getColor(shadow.value, opacity.value);
- veriVal.value = getVertical();
-    button.style.boxShadow = boxShadowString;
+  veriVal.value = getVertical();
+  button.style.boxShadow = boxShadowString;
   codeSnippet.innerHTML = "box-shadow: " + boxShadowString + ";";
 });
 
-blur.addEventListener('mousemove', function() {
+blur.addEventListener('mousemove', function () {
   boxShadowString = getInset() + getHorizontal() + "px " + getVertical() + "px " + getBlur() + "px " + getSpread() + "px " + getColor(shadow.value, opacity.value);
   blurVal.value = getBlur();
-    button.style.boxShadow = boxShadowString;
+  button.style.boxShadow = boxShadowString;
   codeSnippet.innerHTML = "box-shadow: " + boxShadowString + ";";
 });
 
-spread.addEventListener('mousemove', function() {
+spread.addEventListener('mousemove', function () {
   boxShadowString = getInset() + getHorizontal() + "px " + getVertical() + "px " + getBlur() + "px " + getSpread() + "px " + getColor(shadow.value, opacity.value);
   spreadVal.value = getSpread();
-    button.style.boxShadow = boxShadowString;
+  button.style.boxShadow = boxShadowString;
   codeSnippet.innerHTML = "box-shadow: " + boxShadowString + ";";
 });
 
-shadow.addEventListener('change', function() {
+shadow.addEventListener('change', function () {
   boxShadowString = getInset() + getHorizontal() + "px " + getVertical() + "px " + getBlur() + "px " + getSpread() + "px " + getColor(shadow.value, opacity.value);
   shadowVal.value = shadow.value;
-    button.style.boxShadow = boxShadowString;
+  button.style.boxShadow = boxShadowString;
   codeSnippet.innerHTML = "box-shadow: " + boxShadowString + ";";
 });
 
-bgVal.addEventListener('change', function() {
-  bgColor.value = bgVal.value; document.querySelector('.right-column').style.backgroundColor = bgColor.value;
+bgVal.addEventListener('change', function () {
+  bgColor.value = bgVal.value;document.querySelector('.right-column').style.backgroundColor = bgColor.value;
 });
 
-buttVal.addEventListener('change', function() {
-  buttonColor.value = buttVal.value; button.style.backgroundColor = buttonColor.value;
+buttVal.addEventListener('change', function () {
+  buttonColor.value = buttVal.value;button.style.backgroundColor = buttonColor.value;
 });
 
-txtVal.addEventListener('change', function() {
-  textColor.value = txtVal.value; button.style.color = textColor.value;
+txtVal.addEventListener('change', function () {
+  textColor.value = txtVal.value;button.style.color = textColor.value;
 });
 
 
-shadowVal.addEventListener('change', function() {
+shadowVal.addEventListener('change', function () {
   shadow.value = shadowVal.value;
 });
 
-bgColor.addEventListener('change', function() {
+bgColor.addEventListener('change', function () {
   document.querySelector('.right-column').style.backgroundColor = bgColor.value;
   bgVal.value = bgColor.value;
 });
 
-textColor.addEventListener('change', function() {
- document.querySelector('.button').style.color = textColor.value;
+textColor.addEventListener('change', function () {
+  document.querySelector('.button').style.color = textColor.value;
   txtVal.value = textColor.value;
 });
 
-buttonColor.addEventListener('change', function() { document.querySelector('.button').style.backgroundColor = buttonColor.value;
+buttonColor.addEventListener('change', function () {document.querySelector('.button').style.backgroundColor = buttonColor.value;
   buttVal.value = buttonColor.value;
 });
 
@@ -375,7 +405,7 @@ function getInset() {
   if (inset.checked) {
     return "inset ";
   }
-  return ""; 
+  return "";
 }
 
 function getOpacity() {
@@ -389,12 +419,19 @@ function getColor(hex, opacity) {
 }
 
 function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
-}     
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16) } :
+  null;
+}
+//# sourceURL=pen.js
+    </script>
 
-<script>
+  
+
+</body>
+
+</html>
+ 
